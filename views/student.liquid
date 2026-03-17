@@ -107,24 +107,26 @@
     <p> {{  student.body }} </p>
 
     {% comment %} berichten achterlaten {% endcomment %}
-
+<section class="nominatiebericht">
 <h2>Berichten</h1>
-<div class="card">
+<div class="commentcard">
 
-    
+    {% for comment in comments %}
+      <div class="commentcard">
       <div class="row1">
-    <p> {{ Krijn }} </p>
-    <p> {{ 16 maart 2026}}  </p>
+    <p> {{ comment.name }} </p>
+    <p> {{ comment.date_created }}  </p>
         </div>
-    <p> {{ Vette nominatie }}</p>
-    <p>Nominatie : {{ id }} </p>
+    <p> {{ comment.comment }}</p>
+    <p>Nominatie #{{ comment.nomination }} </p>
  
 </div>
+    {% endfor %}
 <hr>
 
 
 
-<form action="/Talentaward/student/:title" method="POST">
+<form action="/Talentaward/student/{{ studentTitle }}/comment" method="POST">
   <label> 
     Comment
     <textarea placeholder="Schrijf jouw reactie..." name="message"></textarea>
@@ -136,7 +138,7 @@
   </label>
   <button type="submit">Laat je reactie achter</button>
 </form>
-
+</section>
 </main>
 
 {% render 'partials/foot.liquid' %}

@@ -186,6 +186,12 @@ app.get("/talentaward", async function (request, response) {
 app.get("/Talentaward/student/:title", async function (request, response) {
   const studentTitle = decodeURIComponent(request.params.title);
 
+  // Haal de comments op
+  const commentsData = await fetch(
+    "https://fdnd-agency.directus.app/items/adconnect_nominations_comments",
+  );
+  const commentsDataJSON = await commentsData.json();
+
   const extraData = {
     homepageHeader: {
       headeritem1: "FAQ's",
@@ -206,6 +212,7 @@ app.get("/Talentaward/student/:title", async function (request, response) {
     documents: documentDataJSON.data,
     students: awardDataJSON.data,
     studentTitle: studentTitle,
+    comments: commentsDataJSON.data,
   });
 });
 
@@ -345,6 +352,37 @@ app.post("/", async function (request, response) {
   // Er is nog geen afhandeling van een POST, dus stuur de bezoeker terug naar /
   response.redirect(303, "/");
 });
+
+app.post(
+  "/Talentaward/student/:title/comment",
+  async function (request, response) {
+    const studentTitle = decodeURIComponent(request.params.title);
+
+    // Haal de form data op uit request.body
+    const { message, afzender } = request.body;
+
+    // Stuur de data naar de Directus API
+    const result = await fetch(
+      "https://fdnd-agency.directus.app/items/adconnect_nominations_comments",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          comment: message,
+          name: afzender,
+        }),
+        ç,
+      },
+    );
+
+    // Redirect terug naar de studentpagina
+    response.redirect(
+      `/Talentaward/student/${encodeURIComponent(studentTitle)}`,
+    );
+  },
+);
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000, als dit ergens gehost wordt, is het waarschijnlijk poort 80
