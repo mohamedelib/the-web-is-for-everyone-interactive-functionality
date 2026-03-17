@@ -1,0 +1,633 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Clash_Display:wght@400;600;700&display=swap");
+
+:root {
+  /* =========================
+     BRAND BLUE
+  ========================== */
+
+  --color-brand-darkest: hsl(213, 100%, 8%);
+  --color-brand-darker: hsl(213, 100%, 15%);
+  --color-brand-dark: hsl(213, 100%, 18%);
+
+  --color-brand-active: hsl(213, 100%, 28%);
+  --color-brand-hover: hsl(213, 100%, 38%);
+  --color-brand: hsl(213, 100%, 48%);
+
+  --color-brand-soft: hsl(213, 23%, 58%);
+  --color-brand-light: hsl(213, 100%, 68%);
+  --color-brand-lighter: hsl(213, 100%, 78%);
+  --color-brand-subtle: hsl(213, 100%, 88%);
+
+  /* =========================
+     ACCENT
+  ========================== */
+
+  --color-accent-strong: hsl(10, 79%, 45%);
+  --color-accent: hsl(10, 79%, 55%);
+  --color-accent-light: hsl(10, 90%, 65%);
+  --color-accent-soft: hsl(10, 90%, 75%);
+  --color-accent-subtle: hsl(10, 90%, 85%);
+
+  /* =========================
+     NEUTRALS
+  ========================== */
+
+  --color-bg-dark: hsl(213, 21%, 9%);
+  --color-bg-darker: hsl(213, 22%, 12%);
+  --color-surface-dark: hsl(213, 23%, 18%);
+
+  --color-text: hsl(213, 21%, 9%);
+  --color-text-muted: hsl(213, 20%, 33%);
+  --color-text-subtle: hsl(213, 19%, 36%);
+
+  --color-border: hsl(213, 8%, 84%);
+  --color-border-strong: hsl(212, 18%, 69%);
+
+  --color-bg-page: hsl(0, 0%, 98%);
+  --color-bg-surface: hsl(0, 0%, 100%);
+  /* =========================
+      Spacing
+========================== */
+
+  --space-xs: clamp(4px, 0.4vw, 6px);
+  --space-sm: clamp(8px, 0.8vw, 12px);
+  --space-md: clamp(16px, 1.5vw, 20px);
+  --space-lg: clamp(24px, 2vw, 32px);
+  --space-xl: clamp(32px, 3vw, 48px);
+  --button-outline-padding: 1.1rem 1.8rem;
+  --button-outline-radius: 15px;
+
+  /* =========================
+     TYPOGRAFIE
+  ========================== */
+
+  --font-body: "Archivo", sans-serif;
+  --font-heading: "ClashDisplay", sans-serif;
+
+  --heading-font-weight: 600;
+  --button-font-weight: 400;
+  --text-font-weight: 300;
+  --h1-size: clamp(1.875rem, 1.602rem + 1.1494vw, 2.5rem);
+  --h1-line-height: 1.2;
+  --h1-max-width: 60ch;
+  --h2-size: clamp(1.5625rem, 1.3714rem + 0.8046vw, 2rem);
+  --h2-line-height: 1.3;
+  --h2-max-width: 65ch;
+  --h3-size: clamp(1.375rem, 1.2658rem + 0.4598vw, 1.625rem);
+  --h3-line-height: 1.3;
+  --h3-max-width: 65ch;
+  --p-s-size: 17px;
+  --p-s-line-height: 1.8;
+  --p-s-max-width: 70ch;
+}
+
+body {
+  background-color: var(--color-bg-page);
+  margin: 0;
+}
+
+.page-wrapper {
+  padding: var(--space-s);
+  margin: var(--space-sm);
+}
+* {
+  scroll-behavior: smooth;
+}
+h1 {
+  line-height: var(--h1-line-height);
+  font-size: var(--h1-size);
+  max-width: var(--h1-max-width);
+}
+
+h2 {
+  line-height: var(--h2-line-height);
+  font-size: var(--h2-size);
+  max-width: var(--h2-max-width);
+}
+
+h3 {
+  line-height: var(--h3-line-height);
+  font-size: var(--h3-size);
+  max-width: var(--h3-max-width);
+}
+
+p {
+  line-height: var(--p-s-line-height);
+  font-size: var(--p-s-size);
+  max-width: var(--p-s-max-width);
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  text-wrap: balance;
+}
+
+p,
+li,
+ul,
+a {
+  font-family: var(--font-body);
+  font-weight: var(--text-font-weight);
+}
+
+a[href="/Talentaward"] {
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+}
+header a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.astyle {
+  text-decoration: none;
+  padding: var(--button-outline-padding);
+  color: var(--color-accent);
+  outline: 1.5px solid var(--color-accent);
+  border-radius: var(--button-outline-radius);
+  cursor: pointer;
+}
+
+/* einde stylesheet */
+
+.burgermenu {
+  @media (min-width: 1160px) {
+    display: none;
+  }
+}
+.first-header ul,
+.second-header ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  justify-content: flex-end;
+}
+
+.second-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2em 0;
+  box-sizing: border-box;
+  max-width: 1400px;
+  margin-right: 1em;
+}
+
+.second-header ul {
+  display: none;
+  @media (min-width: 1160px) {
+    display: flex;
+  }
+}
+.verdeling {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.overons {
+  background-color: var(--color-bg-page);
+}
+
+.ad-dag {
+  background-color: var(--color-accent);
+  color: var(--color-bg-page);
+}
+
+.banner {
+  @media (min-width: 780px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.3fr 0.25fr 0.5fr;
+  }
+}
+.banner img {
+  border-radius: 1em 1em 0 0;
+  height: 20em;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bannerfoto {
+  @media (min-width: 780px) {
+    grid-row: 1 / 4;
+    grid-column: 2 / 3;
+    align-items: center;
+    align-self: center;
+  }
+}
+.banner h1 {
+  @media (min-width: 780px) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+}
+
+.banner p {
+  @media (min-width: 780px) {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+}
+
+.verdeling {
+  @media (min-width: 780px) {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+}
+
+.divider {
+  text-align: center;
+  @media (min-width: 780px) {
+    margin: 0 auto;
+    margin-bottom: 2em;
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.5fr;
+  outline: 1px solid var(--color-accent);
+  border-radius: 1em;
+  padding: 0.7em;
+  max-width: 375px;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  border-radius: 0.5em;
+  object-fit: cover;
+  max-width: 430px;
+  margin: 0 auto;
+  grid-row: 1 / 2;
+}
+
+.cardinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  padding: 1em;
+  grid-row: 2 / 3;
+}
+
+.kaarten {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 0 auto;
+  max-width: fit-content;
+
+  @media (min-width: 780px) {
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}
+.information {
+  @media (min-width: 780px) {
+    margin: 0 auto;
+    max-width: 600px;
+    margin-top: 2em;
+  }
+
+  .information a {
+    background-color: var(--color-accent);
+    color: white;
+  }
+}
+.info-cards {
+  background-color: var(--color-accent);
+  width: 100%;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 0;
+  margin: 50px calc(var(--space-md) * -1) 0 calc(var(--space-md) * -1);
+}
+
+.mini-cards {
+  background-color: var(--color-bg-page);
+  color: var(--color-text);
+  border-radius: 20px;
+  padding-bottom: var(--space-xl);
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.tekstt {
+  display: block;
+  margin: 0 auto;
+  max-width: 700px;
+}
+.padd {
+  display: flex;
+  flex-direction: column;
+  margin: var(--space-md);
+  gap: 1em;
+}
+
+.waaromkies {
+  @media (min-width: 780px) {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+.waaromkies ul {
+  display: flex;
+  flex-direction: column;
+  list-style-image: url("/assets/check-circle.svg");
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.waaromkies a {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* Student pagina */
+.profile {
+  padding-top: 2em;
+  color: white;
+  background-color: var(--color-accent);
+
+  display: grid;
+  grid-template-rows: 0.1fr 0.2fr 0.3fr 0.1fr 0.2fr 0.2fr;
+
+  @media (min-width: 1160px) {
+    grid-template-columns: 0.7fr 0.3fr;
+    grid-template-rows: repeat(5, auto);
+    padding: 4rem 2rem;
+  }
+}
+
+.profile h1 {
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 4px;
+  font-weight: normal;
+  border-radius: 15px;
+  grid-row: 2 / 3;
+  align-items: center;
+  align-self: center;
+}
+
+.profile h2 {
+  grid-row: 3 / 4;
+}
+.profile img {
+  border-radius: 10px;
+  outline: 2px solid var(--color-brand-active);
+  grid-row: 4 / 5;
+  @media (min-width: 1160px) {
+    grid-column: 2;
+    align-self: center;
+    grid-row: 1 / -1;
+    max-width: 500px;
+  }
+}
+
+dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+dt {
+  grid-row: 1;
+}
+
+dd {
+  grid-row: 2;
+}
+dd {
+  margin: 0;
+}
+
+.profile img,
+.profile h1,
+.profile h2 {
+  margin: 0 auto;
+  @media (min-width: 1160px) {
+    margin: 0;
+  }
+}
+
+.profile h1,
+.profile h2,
+.profile a,
+div.dividerr {
+  margin: 0 auto;
+  @media (min-width: 1160px) {
+    margin-left: var(--space-md);
+  }
+}
+.profile a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+  grid-row: 1 / 2;
+}
+
+.video {
+  margin: 0 auto;
+}
+
+.dividerr {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
+  @media (min-width: 1160px) {
+    grid-column: 1 / 2;
+    margin: 0;
+  }
+}
+
+.video,
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+/* Talentaward page */
+
+.talentcard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 20px;
+}
+
+.talentcard img {
+  width: 100%;
+
+  grid-row: 1;
+}
+
+.kaartje {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  outline: 1px solid var(--color-border);
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+}
+
+.labell {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--color-accent);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.notdetails {
+  grid-row: 2;
+}
+.nodetails p:nth-of-type(1) {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.nodetails p:nth-of-type(2) {
+  color: var(--color-brand);
+}
+
+.nodetails p:nth-of-type(3) {
+  color: grey;
+}
+
+.nodetails a {
+  color: var(--color-accent);
+  font-weight: 400;
+}
+
+.introductie {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  justify-content: center;
+  background-color: var(--color-accent-subtle);
+  padding: 0 20px;
+}
+
+.verwijzing {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media (min-width: 450px) {
+    flex-direction: row;
+  }
+}
+a.overons.astyle,
+a.ad-dag.astyle {
+  max-width: 150px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  gap: 1em;
+  background-color: white;
+  outline: 2px solid var(--color-border);
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 1em 2.5em;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 0;
+  max-height: 156px;
+  box-sizing: border-box;
+}
+
+.uitreiking {
+  color: white;
+  background-color: var(--color-accent);
+  outline: none;
+  margin-bottom: 30px;
+}
+.box p,
+.box h3 {
+  margin: 0;
+}
+
+.nomidata {
+  padding: 20px;
+}
+
+.nodetails {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+.ADdagrec {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-accent);
+  color: white;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.nomidata select {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  border-radius: 16px;
+  padding: 10px 10px;
+  font-size: 16px;
+  color: var(--color-accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.flexer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.loll {
+  max-width: 100%;
+}
+
+.allbox {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: stretch;
+}
+
+@media (min-width: 800px) {
+  .allbox {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2em;
+  }
+}
+
+.dag {
+  outline: 2px solid white;
+  color: white;
+}

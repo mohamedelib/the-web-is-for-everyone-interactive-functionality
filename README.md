@@ -1,36 +1,48 @@
-# Interactive Functionality
+# AdConnect website
 
-Ontwerp en maak voor een opdrachtgever een interactieve toepassing die voor iedereen toegankelijk is
-
-De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web-is-for-everyone-interactive-functionality/blob/main/docs/INSTRUCTIONS.md)
-
-
-## Inhoudsopgave
-
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
+Voor dit project heb ik een deel van de AdConnect website opnieuw ontworpen en uitgebreid. De opdracht was om een duidelijkere en beter werkende website te maken. Ik heb een nieuwe home pagina gemaakt, de Talent Award pagina verbeterd en een studenten pagina ontwikkeld voor genomineerde studenten.
 
 ## Beschrijving
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual of video toe 📸 -->
-<!-- Voeg een link toe naar GitHub Pages 🌐-->
 
-## Gebruik
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+De website bestaat uit drie pagina’s. De home pagina, de Talent Award pagina en een studenten pagina.
+
+De home pagina geeft een overzicht van belangrijke onderdelen van AdConnect. Ik heb kleuren uit de styleguide gebruikt maar anders toegepast zodat de pagina moderner er uit ziet.
+
+De Talent Award pagina toont een overzicht van genomineerde studenten. Vanaf deze pagina kan de gebruiker doorklikken naar een studenten pagina.
+
+De studenten pagina toont informatie over een specifieke student zoals naam, opleiding en instelling. De gegevens komen uit een externe database en worden dynamisch geladen.
+
+## Responsive
+
+De website is gebouwd met Mobile First.
+
+Op kleine schermen staat de inhoud onder elkaar.
+Op grotere schermen verschijnen meerdere kolommen.
+
+# Toegankelijk
+
+Ik gebruik semantische HTML elementen zoals header en sections.
+Afbeeldingen hebben een alt beschrijving.
+Links hebben duidelijke labels.
+
+
+## Huisstijl
+
+De website gebruikt kleuren uit de AdConnect styleguide.
+Titels, witruimte en afbeeldingen zorgen voor een duidelijke structuur en focus op de studenten.
+
+<img width="213" height="432" alt="image" src="https://github.com/user-attachments/assets/d019084a-f6d4-42f9-b864-00b9cd87f9c0" />
+
+
+## Interactief
+
+Op de Talent Award pagina staan kaarten van studenten.
+Wanneer een gebruiker op een kaart klikt opent de studenten pagina van die persoon.
+Dit gebeurt via een dynamische route.
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framework of library gebruikt? -->
 
-## Installatie
-<!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
+HTML zorgt voor de structuur van de pagina.
+CSS regelt de layout met grid en media queries en de styleguide.
+JavaScript haalt data op uit een API en toont deze op de pagina.
 
-
-## Bronnen
-
-## Licentie
-
-This project is licensed under the terms of the [MIT license](./LICENSE).
