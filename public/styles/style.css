@@ -82,6 +82,11 @@
   --p-s-max-width: 70ch;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   background-color: var(--color-bg-page);
   margin: 0;
@@ -630,4 +635,66 @@ a.ad-dag.astyle {
 .dag {
   outline: 2px solid white;
   color: white;
+}
+
+/* nominatiebericht */
+
+.nominatiebericht {
+  max-width: 700px;
+}
+
+.commentcard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  background: white;
+  border: 1.5px solid #b8d0e8;
+  border-radius: 13px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #6b8cb0;
+  font-weight: bold;
+}
+
+.row1 {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px 5px;
+  background-color: #ebf4fc;
+  border-radius: 10px;
+  border: 2px solid #b9d0e8;
+  resize: none;
+  outline: none;
+}
+textarea::placeholder {
+  color: #6b8cb0;
+}
+
+button[type="submit"] {
+  background-color: var(--color-brand);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 30px;
+  width: 100%;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+form[action="/Talentaward/student/{{ studentTitle }}/comment"] {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
 }
