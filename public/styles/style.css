@@ -150,8 +150,8 @@ header a {
 .astyle {
   text-decoration: none;
   padding: var(--button-outline-padding);
-  color: var(--color-accent);
-  outline: 1.5px solid var(--color-accent);
+  color: var(--color-brand-active);
+  outline: 1.5px solid var(--color-brand-active);
   border-radius: var(--button-outline-radius);
   cursor: pointer;
 }
@@ -199,7 +199,7 @@ header a {
 }
 
 .ad-dag {
-  background-color: var(--color-accent);
+  background-color: var(--color-brand-active);
   color: var(--color-bg-page);
 }
 
@@ -258,7 +258,7 @@ header a {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.5fr 0.5fr;
-  outline: 1px solid var(--color-accent);
+  outline: 1px solid var(--color-brand-active);
   border-radius: 1em;
   padding: 0.7em;
   max-width: 375px;
@@ -302,12 +302,12 @@ header a {
   }
 
   .information a {
-    background-color: var(--color-accent);
+    background-color: var(--color-brand-active);
     color: white;
   }
 }
 .info-cards {
-  background-color: var(--color-accent);
+  background-color: var(--color-brand-active);
   width: 100%;
   color: white;
   justify-content: center;
@@ -355,7 +355,7 @@ header a {
 }
 
 .waaromkies a {
-  background-color: var(--color-accent);
+  background-color: var(--color-brand-active);
   color: white;
 }
 
@@ -363,7 +363,7 @@ header a {
 .profile {
   padding-top: 2em;
   color: white;
-  background-color: var(--color-accent);
+  background-color: var(--color-brand-active);
 
   display: grid;
   grid-template-rows: 0.1fr 0.2fr 0.3fr 0.1fr 0.2fr 0.2fr;
@@ -496,7 +496,7 @@ div.dividerr {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: var(--color-accent);
+  background: var(--color-brand-active);
   color: white;
   padding: 6px 12px;
   border-radius: 20px;
@@ -507,7 +507,7 @@ div.dividerr {
   grid-row: 2;
 }
 .nodetails p:nth-of-type(1) {
-  color: var(--color-accent);
+  color: var(--color-brand-active);
   font-weight: bold;
 }
 
@@ -520,7 +520,7 @@ div.dividerr {
 }
 
 .nodetails a {
-  color: var(--color-accent);
+  color: var(--color-brand-active);
   font-weight: 400;
 }
 
@@ -530,7 +530,7 @@ div.dividerr {
   margin: 0 auto;
 
   justify-content: center;
-  background-color: var(--color-accent-subtle);
+  background-color: var(--color-brand-subtle);
   padding: 0 20px;
 }
 
@@ -568,7 +568,7 @@ a.ad-dag.astyle {
 
 .uitreiking {
   color: white;
-  background-color: var(--color-accent);
+  background-color: var(--color-brand-active);
   outline: none;
   margin-bottom: 30px;
 }
@@ -588,7 +588,7 @@ a.ad-dag.astyle {
 .ADdagrec {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-accent);
+  background-color: var(--color-brand-active);
   color: white;
   margin: 0 auto;
   justify-content: center;
@@ -602,7 +602,7 @@ a.ad-dag.astyle {
   border-radius: 16px;
   padding: 10px 10px;
   font-size: 16px;
-  color: var(--color-accent);
+  color: var(--color-brand-active);
   font-weight: 600;
   cursor: pointer;
 }
