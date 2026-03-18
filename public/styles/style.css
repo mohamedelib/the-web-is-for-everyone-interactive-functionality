@@ -93,8 +93,7 @@ body {
 }
 
 .page-wrapper {
-  padding: var(--space-s);
-  margin: var(--space-sm);
+  padding: var(--space-md);
 }
 * {
   scroll-behavior: smooth;
@@ -640,61 +639,72 @@ a.ad-dag.astyle {
 /* nominatiebericht */
 
 .nominatiebericht {
-  max-width: 700px;
-}
-
-.commentcard {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
   background: white;
   border: 1.5px solid #b8d0e8;
   border-radius: 13px;
-  padding: 10px;
-  margin-bottom: 30px;
+  padding: 16px;
 }
 
-label {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 10px;
-  color: #6b8cb0;
-  font-weight: bold;
+.commentcard {
+  border-left: 3px solid #b8d0e8;
+  padding: 8px 12px;
+  margin-bottom: 12px;
 }
 
 .row1 {
   display: flex;
-  flex-direction: row;
   gap: 5px;
 }
 
-textarea {
-  width: 100%;
-  padding: 10px 5px;
-  background-color: #ebf4fc;
-  border-radius: 10px;
-  border: 2px solid #b9d0e8;
-  resize: none;
-  outline: none;
-}
-textarea::placeholder {
-  color: #6b8cb0;
+.comment-form {
+  border-top: 2px dashed #b8d0e8;
+  padding-top: 16px;
 }
 
+.comment-form label {
+  display: block;
+  color: #6b8cb0;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+textarea,
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  background: #ebf4fc;
+  border: 2px solid var(--color-brand-active);
+  border-radius: 10px;
+  outline: none;
+  margin-top: 6px;
+}
+
+textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+textarea::placeholder,
+input::placeholder {
+  font-family: var(--font-body);
+}
 button[type="submit"] {
-  background-color: var(--color-brand);
+  width: 100%;
+  padding: 10px;
+  background: var(--color-brand-active);
   color: white;
   border: none;
   border-radius: 50px;
-  padding: 8px 30px;
-  width: 100%;
-  font-size: 14px;
   cursor: pointer;
+  margin-top: 8px;
 }
 
-form[action="/Talentaward/student/{{ studentTitle }}/comment"] {
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
+.comments-list {
+  max-height: 300px;
+  overflow-y: auto;
 }

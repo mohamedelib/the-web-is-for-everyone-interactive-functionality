@@ -107,10 +107,10 @@
     <p> {{  student.body }} </p>
 
     {% comment %} berichten achterlaten {% endcomment %}
+     </section>
 <section class="nominatiebericht">
-<h2>Berichten</h1>
-<div class="commentcard">
-
+<h2>Berichten</h2>
+<div class="comments-list">
     {% for comment in comments %}
       <div class="commentcard">
       <div class="row1">
@@ -120,13 +120,12 @@
     <p> {{ comment.comment }}</p>
     <p>Nominatie #{{ comment.nomination }} </p>
  
-</div>
+    </div>
     {% endfor %}
-<hr>
+</div>
 
 
-
-<form action="/Talentaward/student/{{ studentTitle }}/comment" method="POST">
+<form class="comment-form" action="/Talentaward/student/{{ studentTitle }}/comment" method="POST">
   <label> 
     Comment
     <textarea placeholder="Schrijf jouw reactie..." name="message"></textarea>
@@ -134,11 +133,11 @@
 
   <label>
     Naam
-    <textarea placeholder="Jouw naam" name="afzender"></textarea>
+    <input type="text" placeholder="Jouw naam" name="afzender"></input>
   </label>
   <button type="submit">Laat je reactie achter</button>
 </form>
-</section>
+
 </main>
 
 {% render 'partials/foot.liquid' %}
