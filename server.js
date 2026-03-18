@@ -213,6 +213,7 @@ app.get("/Talentaward/student/:title", async function (request, response) {
     students: awardDataJSON.data,
     studentTitle: studentTitle,
     comments: commentsDataJSON.data,
+    success: request.query.success === "true",
   });
 });
 
@@ -395,8 +396,8 @@ app.post(
         submitted: true,
         errors: errors,
         form: {
-          message: message || "",
-          afzender: afzender || "",
+          message: message || undefined,
+          afzender: afzender || undefined,
         },
       });
     }
@@ -415,7 +416,7 @@ app.post(
     );
 
     response.redirect(
-      `/Talentaward/student/${encodeURIComponent(studentTitle)}`,
+      `/Talentaward/student/${encodeURIComponent(studentTitle)}?success=true`,
     );
   },
 );

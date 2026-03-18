@@ -125,8 +125,11 @@
 </div>
 
 
-<form class="comment-form" action="/Talentaward/student/{{ studentTitle }}/comment" method="POST">
 
+<form class="comment-form" action="/Talentaward/student/{{ studentTitle }}/comment" method="POST">
+{% if success %}
+  {% render 'partials/succes.liquid', message: "Reactie geplaatst!" %}
+{% endif %}
  {% if submitted and errors.size > 0 %}
       {% render 'partials/error-banner.liquid', message: "Vul alle velden in." %}
     {% endif %}
@@ -137,7 +140,7 @@
       >{{ form.message }}</textarea>
     </label>
     {% if submitted and form.message == blank %}
-      {% render 'error', message: "Dit veld is verplicht" %}
+      {% render 'partials/error.liquid', message: "Dit veld is verplicht" %}
     {% elsif form.message != blank %}
       {% render 'partials/succes.liquid', message: "comment ingevuld" %}
     {% endif %}
