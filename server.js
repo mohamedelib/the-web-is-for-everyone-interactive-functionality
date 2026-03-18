@@ -357,33 +357,68 @@ app.post(
   "/Talentaward/student/:title/comment",
   async function (request, response) {
     const studentTitle = decodeURIComponent(request.params.title);
-
-    // Haal de form data op uit request.body
     const { message, afzender } = request.body;
 
-    // Stuur de data naar de Directus API
-    const result = await fetch(
+    // Validatie
+    const errors = [];
+    if (!message) errors.push("message");
+    if (!afzender) errors.push("afzender");
+
+    if (errors.length > 0) {
+      // Zelfde data ophalen als GET route
+      const commentsData = await fetch(
+        "https://fdnd-agency.directus.app/items/adconnect_nominations_comments",
+      );
+      const commentsDataJSON = await commentsData.json();
+
+      const extraData = {
+        homepageHeader: {
+          headeritem1: "FAQ's",
+          headeritem2: "Over ons",
+          headeritem3: "Contact",
+          scndheaderitem1: "Home",
+          scndheaderitem2: "Over Ad's",
+          scndheaderitem3: "Publicaties",
+          scndheaderitem4: "Talentaward",
+          scndheaderitem5: "Nieuws",
+          scndheaderitem6: "Kom naar Ad-dag",
+        },
+      };
+
+      return response.render("student.liquid", {
+        title: "Home",
+        extraData: extraData,
+        documents: documentDataJSON.data,
+        students: awardDataJSON.data,
+        studentTitle: studentTitle,
+        comments: commentsDataJSON.data,
+        submitted: true,
+        errors: errors,
+        form: {
+          message: message || "",
+          afzender: afzender || "",
+        },
+      });
+    }
+
+    // Alles ingevuld → stuur naar API
+    await fetch(
       "https://fdnd-agency.directus.app/items/adconnect_nominations_comments",
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           comment: message,
           name: afzender,
         }),
-        ç,
       },
     );
 
-    // Redirect terug naar de studentpagina
     response.redirect(
       `/Talentaward/student/${encodeURIComponent(studentTitle)}`,
     );
   },
 );
-
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000, als dit ergens gehost wordt, is het waarschijnlijk poort 80
 app.set("port", process.env.PORT || 8000);
