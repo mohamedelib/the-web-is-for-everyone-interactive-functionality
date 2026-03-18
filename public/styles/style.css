@@ -708,3 +708,28 @@ button[type="submit"] {
   max-height: 300px;
   overflow-y: auto;
 }
+
+/* UI STATES */
+.success {
+  color: green;
+  font-size: 13px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+.error-banner {
+  background: #fde8e8;
+  color: red;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.field-error {
+  border: 2px solid red;
+  background: #fde8e8;
+}
