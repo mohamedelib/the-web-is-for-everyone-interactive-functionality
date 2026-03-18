@@ -126,15 +126,33 @@
 
 
 <form class="comment-form" action="/Talentaward/student/{{ studentTitle }}/comment" method="POST">
-  <label> 
-    Comment
-    <textarea placeholder="Schrijf jouw reactie..." name="message"></textarea>
-  </label>
 
-  <label>
-    Naam
-    <input type="text" placeholder="Jouw naam" name="afzender"></input>
-  </label>
+ {% if submitted and errors.size > 0 %}
+      {% render 'partials/error-banner.liquid', message: "Vul alle velden in." %}
+    {% endif %}
+  <label>Comment
+      <textarea placeholder="Schrijf jouw reactie..."
+        name="message"
+        {% if submitted and form.message == blank %}class="field-error"{% endif %}
+      >{{ form.message }}</textarea>
+    </label>
+    {% if submitted and form.message == blank %}
+      {% render 'error', message: "Dit veld is verplicht" %}
+    {% elsif form.message != blank %}
+      {% render 'partials/succes.liquid', message: "comment ingevuld" %}
+    {% endif %}
+
+  <label>Naam
+      <input type="text" placeholder="Jouw naam"
+        name="afzender"
+        {% if submitted and form.afzender == blank %}class="field-error"{% endif %}
+        value="{{ form.afzender }}">
+    </label>
+    {% if submitted and form.afzender == blank %}
+      {% render 'partials/error.liquid', message: "Dit veld is verplicht" %}
+    {% elsif form.afzender != blank %}
+      {% render 'partials/succes.liquid', message: "name ingevuld" %}
+    {% endif %}
   <button type="submit">Laat je reactie achter</button>
 </form>
 
