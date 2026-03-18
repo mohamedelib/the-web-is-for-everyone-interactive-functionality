@@ -729,7 +729,8 @@ button[type="submit"] {
   font-size: 14px;
 }
 
-.field-error {
+textarea.field-error,
+input[type="text"].field-error {
   border: 2px solid red;
   background: #fde8e8;
 }
