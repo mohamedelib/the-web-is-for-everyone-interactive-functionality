@@ -90,10 +90,9 @@
 body {
   background-color: var(--color-bg-page);
   margin: 0;
+  padding: 0;
 }
 
-.page-wrapper {
-}
 * {
   scroll-behavior: smooth;
 }
@@ -173,10 +172,10 @@ header a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2em 0;
+  margin: 1.5em 0;
   box-sizing: border-box;
-  max-width: 1400px;
-  margin-right: 1em;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .second-header ul {
@@ -351,6 +350,7 @@ header a {
   list-style-image: url("/assets/check-circle.svg");
   gap: 1rem;
   padding-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
 .waaromkies a {
@@ -485,6 +485,44 @@ div.dividerr {
 
 /* Talentaward page */
 
+.awardpic {
+  max-width: 500px;
+  border-radius: 12px;
+}
+
+.introductie {
+  background-color: var(--color-brand-subtle);
+  padding: 20px;
+}
+
+/* GRID */
+}
+
+/* Vanaf desktop */
+@media (min-width: 1300px) {
+  .gridd {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; /* 🔥 zorgt voor verticale centrering */
+    gap: 2rem;
+  }
+}
+
+/* Linkerkant */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Afbeelding */
+.gridd img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  margin: 0 auto;
+  display: block;
+}
 .talentcard {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -559,7 +597,7 @@ div.dividerr {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
+  margin-bottom: 20px;
   @media (min-width: 450px) {
     flex-direction: row;
   }
