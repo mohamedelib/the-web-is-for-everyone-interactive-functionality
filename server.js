@@ -362,6 +362,7 @@ app.post(
     const studentTitle = decodeURIComponent(request.params.title);
     const { message, afzender } = request.body;
 
+    const student = awardDataJSON.data.find((s) => s.title === studentTitle);
     // Validatie
     const errors = [];
     if (!message) errors.push("message");
@@ -370,7 +371,7 @@ app.post(
     if (errors.length > 0) {
       // Zelfde data ophalen als GET route
       const commentsData = await fetch(
-        "https://fdnd-agency.directus.app/items/adconnect_nominations_comments",
+        `https://fdnd-agency.directus.app/items/adconnect_nominations_comments?filter[nomination]=${student.id}`,
       );
       const commentsDataJSON = await commentsData.json();
 
@@ -398,8 +399,8 @@ app.post(
         submitted: true,
         errors: errors,
         form: {
-          message: message || undefined,
-          afzender: afzender || undefined,
+          message: message || "",
+          afzender: afzender || "",
         },
       });
     }
@@ -413,6 +414,7 @@ app.post(
         body: JSON.stringify({
           comment: message,
           name: afzender,
+          nomination: student.id,
         }),
       },
     );
