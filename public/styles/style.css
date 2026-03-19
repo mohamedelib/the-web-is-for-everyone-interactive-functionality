@@ -496,6 +496,8 @@ div.dividerr {
 }
 
 /* GRID */
+.gridd {
+  display: block;
 }
 
 /* Vanaf desktop */
