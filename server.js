@@ -186,9 +186,11 @@ app.get("/talentaward", async function (request, response) {
 app.get("/Talentaward/student/:title", async function (request, response) {
   const studentTitle = decodeURIComponent(request.params.title);
 
+  // Zoek eerst de student
+  const student = awardDataJSON.data.find((s) => s.title === studentTitle);
   // Haal de comments op
   const commentsData = await fetch(
-    "https://fdnd-agency.directus.app/items/adconnect_nominations_comments",
+    `https://fdnd-agency.directus.app/items/adconnect_nominations_comments?filter[nomination]=${student.id}`,
   );
   const commentsDataJSON = await commentsData.json();
 
