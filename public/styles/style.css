@@ -93,7 +93,6 @@ body {
 }
 
 .page-wrapper {
-  padding: var(--space-md);
 }
 * {
   scroll-behavior: smooth;
@@ -171,6 +170,10 @@ header a {
   justify-content: flex-end;
 }
 
+.first-header {
+  background-color: var(--color-brand-subtle);
+  padding: 5px;
+}
 .second-header {
   display: flex;
   justify-content: space-between;
@@ -203,6 +206,8 @@ header a {
 }
 
 .banner {
+  padding: 20px;
+  background-color: var(--color-brand-subtle);
   @media (min-width: 780px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -542,9 +547,13 @@ div.dividerr {
     flex-direction: row;
   }
 }
-a.overons.astyle,
+
+a.overons.astyle {
+  max-width: 200px;
+}
+
 a.ad-dag.astyle {
-  max-width: 150px;
+  max-width: 300px;
 }
 
 .box {
@@ -593,6 +602,7 @@ a.ad-dag.astyle {
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
+  padding: 30px;
 }
 
 .nomidata select {
