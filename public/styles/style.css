@@ -135,11 +135,6 @@ a {
   font-weight: var(--text-font-weight);
 }
 
-a[href="/Talentaward"] {
-  color: red;
-  font-weight: bold;
-  text-decoration: underline;
-}
 header a {
   text-decoration: none;
   color: var(--color-text);
@@ -370,12 +365,12 @@ header a {
   background-color: var(--color-brand-active);
 
   display: grid;
-  grid-template-rows: 0.1fr 0.2fr 0.3fr 0.1fr 0.2fr 0.2fr;
+  grid-template-rows: 0.1fr 0.2fr 0.3fr 0.1fr 0.4fr 0.2fr;
 
-  @media (min-width: 1160px) {
-    grid-template-columns: 0.7fr 0.3fr;
-    grid-template-rows: repeat(5, auto);
+  @media (min-width: 780px) {
+    grid-template-columns: 0.4fr 1fr;
     padding: 4rem 2rem;
+    grid-template-rows: 0.1fr 0.2fr 0.3fr;
   }
 }
 
@@ -388,19 +383,25 @@ header a {
   grid-row: 2 / 3;
   align-items: center;
   align-self: center;
+  @media (min-width: 780px) {
+    grid-column: 2;
+  }
 }
 
 .profile h2 {
   grid-row: 3 / 4;
+  @media (min-width: 780px) {
+    grid-column: 2;
+  }
 }
 .profile img {
   border-radius: 10px;
-  outline: 2px solid var(--color-brand-active);
+  outline: 2px solid white;
   grid-row: 4 / 5;
-  @media (min-width: 1160px) {
-    grid-column: 2;
+  @media (min-width: 780px) {
+    grid-column: 1;
     align-self: center;
-    grid-row: 1 / -1;
+    grid-row: 3;
     max-width: 500px;
   }
 }
@@ -408,26 +409,31 @@ header a {
 dl {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  /* @media (min-width: 780px) {
+    display: flex;
+    flex-direction: column;
+  } */
 }
 
 dt {
   grid-row: 1;
+  font-size: 20px;
 }
 
 dd {
   grid-row: 2;
+  font-size: 20px;
 }
 dd {
   margin: 0;
+  font-size: 20px;
 }
 
 .profile img,
 .profile h1,
 .profile h2 {
   margin: 0 auto;
-  @media (min-width: 1160px) {
-    margin: 0;
-  }
 }
 
 .profile h1,
@@ -435,7 +441,7 @@ dd {
 .profile a,
 div.dividerr {
   margin: 0 auto;
-  @media (min-width: 1160px) {
+  @media (min-width: 780px) {
     margin-left: var(--space-md);
   }
 }
@@ -455,8 +461,14 @@ div.dividerr {
   flex-direction: column;
   width: fit-content;
   margin: 0 auto;
-  @media (min-width: 1160px) {
-    grid-column: 1 / 2;
+  max-width: 400px;
+  margin-top: 20px;
+  gap: 2em;
+
+  align-self: center;
+  @media (min-width: 780px) {
+    grid-column: 2;
+    grid-row: 3;
     margin: 0;
   }
 }
@@ -468,6 +480,7 @@ div.dividerr {
   justify-content: center;
   max-width: fit-content;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 /* Talentaward page */
@@ -490,12 +503,16 @@ div.dividerr {
 .kaartje {
   display: grid;
   grid-template-rows: auto 1fr;
-  outline: 1px solid var(--color-border);
+  outline: 2px solid var(--color-brand-active);
   width: 100%;
   max-width: 320px;
   position: relative;
+  border-radius: 20px;
 }
 
+.kaartje img {
+  border-radius: 20px;
+}
 .labell {
   position: absolute;
   top: 12px;
@@ -562,10 +579,10 @@ a.ad-dag.astyle {
   max-width: 250px;
   gap: 1em;
   background-color: white;
-  outline: 2px solid var(--color-border);
+  outline: 2px solid var(--color-brand-active);
   border-radius: 12px;
   margin: 0 auto;
-  padding: 1em 2.5em;
+  padding: 1em 1.5em;
   margin-top: 30px;
   width: 100%;
   max-width: 250px;
@@ -653,13 +670,13 @@ a.ad-dag.astyle {
   width: 100%;
   margin: 0 auto;
   background: white;
-  border: 1.5px solid #b8d0e8;
+  border: 2px solid var(--color-brand-active);
   border-radius: 13px;
   padding: 16px;
 }
 
 .commentcard {
-  border-left: 3px solid #b8d0e8;
+  border-left: 3px solid var(--color-brand-active);
   padding: 8px 12px;
   margin-bottom: 12px;
 }
@@ -676,7 +693,7 @@ a.ad-dag.astyle {
 
 .comment-form label {
   display: block;
-  color: #6b8cb0;
+  color: black;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
@@ -687,8 +704,8 @@ textarea,
 input[type="text"] {
   width: 100%;
   padding: 10px;
-  background: #ebf4fc;
-  border: 2px solid var(--color-brand-active);
+  background: white;
+  border: 1.5px solid var(--color-brand-active);
   border-radius: 10px;
   outline: none;
   margin-top: 6px;
