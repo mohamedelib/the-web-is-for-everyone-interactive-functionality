@@ -6,152 +6,153 @@
      BRAND BLUE
   ========================== */
 
-  --color-brand-darkest: hsl(213, 100%, 8%);
-  --color-brand-darker: hsl(213, 100%, 15%);
-  --color-brand-dark: hsl(213, 100%, 18%);
+  --color-brand-darkest: hsl(213, 100%, 8%); /* widely available */
+  --color-brand-darker: hsl(213, 100%, 15%); /* widely available */
+  --color-brand-dark: hsl(213, 100%, 18%); /* widely available */
 
-  --color-brand-active: hsl(213, 100%, 28%);
-  --color-brand-hover: hsl(213, 100%, 38%);
-  --color-brand: hsl(213, 100%, 48%);
+  --color-brand-active: hsl(213, 100%, 28%); /* widely available */
+  --color-brand-hover: hsl(213, 100%, 38%); /* widely available */
+  --color-brand: hsl(213, 100%, 48%); /* widely available */
 
-  --color-brand-soft: hsl(213, 23%, 58%);
-  --color-brand-light: hsl(213, 100%, 68%);
-  --color-brand-lighter: hsl(213, 100%, 78%);
-  --color-brand-subtle: hsl(213, 100%, 88%);
+  --color-brand-soft: hsl(213, 23%, 58%); /* widely available */
+  --color-brand-light: hsl(213, 100%, 68%); /* widely available */
+  --color-brand-lighter: hsl(213, 100%, 78%); /* widely available */
+  --color-brand-subtle: hsl(213, 100%, 88%); /* widely available */
 
   /* =========================
      ACCENT
   ========================== */
 
-  --color-accent-strong: hsl(10, 79%, 45%);
-  --color-accent: hsl(10, 79%, 55%);
-  --color-accent-light: hsl(10, 90%, 65%);
-  --color-accent-soft: hsl(10, 90%, 75%);
-  --color-accent-subtle: hsl(10, 90%, 85%);
+  --color-accent-strong: hsl(10, 79%, 45%); /* widely available */
+  --color-accent: hsl(10, 79%, 55%); /* widely available */
+  --color-accent-light: hsl(10, 90%, 65%); /* widely available */
+  --color-accent-soft: hsl(10, 90%, 75%); /* widely available */
+  --color-accent-subtle: hsl(10, 90%, 85%); /* widely available */
 
   /* =========================
      NEUTRALS
   ========================== */
 
-  --color-bg-dark: hsl(213, 21%, 9%);
-  --color-bg-darker: hsl(213, 22%, 12%);
-  --color-surface-dark: hsl(213, 23%, 18%);
+  --color-bg-dark: hsl(213, 21%, 9%); /* widely available */
+  --color-bg-darker: hsl(213, 22%, 12%); /* widely available */
+  --color-surface-dark: hsl(213, 23%, 18%); /* widely available */
 
-  --color-text: hsl(213, 21%, 9%);
-  --color-text-muted: hsl(213, 20%, 33%);
-  --color-text-subtle: hsl(213, 19%, 36%);
+  --color-text: hsl(213, 21%, 9%); /* widely available */
+  --color-text-muted: hsl(213, 20%, 33%); /* widely available */
+  --color-text-subtle: hsl(213, 19%, 36%); /* widely available */
 
-  --color-border: hsl(213, 8%, 84%);
-  --color-border-strong: hsl(212, 18%, 69%);
+  --color-border: hsl(213, 8%, 84%); /* widely available */
+  --color-border-strong: hsl(212, 18%, 69%); /* widely available */
 
-  --color-bg-page: hsl(0, 0%, 98%);
-  --color-bg-surface: hsl(0, 0%, 100%);
+  --color-bg-page: hsl(0, 0%, 98%); /* widely available */
+  --color-bg-surface: hsl(0, 0%, 100%); /* widely available */
   /* =========================
       Spacing
 ========================== */
 
-  --space-xs: clamp(4px, 0.4vw, 6px);
-  --space-sm: clamp(8px, 0.8vw, 12px);
-  --space-md: clamp(16px, 1.5vw, 20px);
-  --space-lg: clamp(24px, 2vw, 32px);
-  --space-xl: clamp(32px, 3vw, 48px);
-  --button-outline-padding: 1.1rem 1.8rem;
-  --button-outline-radius: 15px;
+  --space-xs: clamp(4px, 0.4vw, 6px); /* Baseline  */
+  --space-sm: clamp(8px, 0.8vw, 12px); /* Baseline  */
+  --space-md: clamp(16px, 1.5vw, 20px); /* Baseline  */
+  --space-lg: clamp(24px, 2vw, 32px); /* Baseline  */
+  --space-xl: clamp(32px, 3vw, 48px); /* Baseline  */
+  --button-outline-padding: 1.1rem 1.8rem; /* Baseline  */
+  --button-outline-radius: 15px; /* Baseline  */
 
   /* =========================
      TYPOGRAFIE
   ========================== */
 
-  --font-body: "Archivo", sans-serif;
-  --font-heading: "ClashDisplay", sans-serif;
+  --font-body: "Archivo", sans-serif; /* Baseline  */
+  --font-heading: "ClashDisplay", sans-serif; /* Baseline  */
 
-  --heading-font-weight: 600;
-  --button-font-weight: 400;
-  --text-font-weight: 300;
-  --h1-size: clamp(1.875rem, 1.602rem + 1.1494vw, 2.5rem);
-  --h1-line-height: 1.2;
-  --h1-max-width: 60ch;
-  --h2-size: clamp(1.5625rem, 1.3714rem + 0.8046vw, 2rem);
-  --h2-line-height: 1.3;
-  --h2-max-width: 65ch;
-  --h3-size: clamp(1.375rem, 1.2658rem + 0.4598vw, 1.625rem);
-  --h3-line-height: 1.3;
-  --h3-max-width: 65ch;
-  --p-s-size: 17px;
-  --p-s-line-height: 1.8;
-  --p-s-max-width: 70ch;
+  --heading-font-weight: 600; /* Baseline  */
+  --button-font-weight: 400; /* Baseline  */
+  --text-font-weight: 300; /* Baseline  */
+  --h1-size: clamp(1.875rem, 1.602rem + 1.1494vw, 2.5rem); /* Baseline  */
+  --h1-line-height: 1.2; /* Baseline  */
+  --h1-max-width: 60ch; /* Baseline  */
+  --h2-size: clamp(1.5625rem, 1.3714rem + 0.8046vw, 2rem); /* Baseline  */
+  --h2-line-height: 1.3; /* Baseline  */
+  --h2-max-width: 65ch; /* Baseline  */
+  --h3-size: clamp(1.375rem, 1.2658rem + 0.4598vw, 1.625rem); /* Baseline  */
+  --h3-line-height: 1.3; /* Baseline  */
+  --h3-max-width: 65ch; /* Baseline  */
+  --p-s-size: 17px; /* Baseline  */
+  --p-s-line-height: 1.8; /* Baseline  */
+  --p-s-max-width: 70ch; /* Baseline  */
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Baseline  */
+  padding: 0; /* Baseline  */
+  box-sizing: border-box; /* Baseline  */
 }
 body {
-  background-color: var(--color-bg-page);
-  margin: 0;
-  padding: 0;
+  background-color: var(--color-bg-page); /* Baseline  */
+  margin: 0; /* Baseline  */
+  padding: 0; /* Baseline  */
 }
 
 * {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Baseline  */
 }
 h1 {
-  line-height: var(--h1-line-height);
-  font-size: var(--h1-size);
-  max-width: var(--h1-max-width);
+  line-height: var(--h1-line-height); /* Baseline  */
+  font-size: var(--h1-size); /* Baseline  */
+  max-width: var(--h1-max-width); /* Baseline  */
 }
 
 h2 {
-  line-height: var(--h2-line-height);
-  font-size: var(--h2-size);
-  max-width: var(--h2-max-width);
+  line-height: var(--h2-line-height); /* Baseline  */
+  font-size: var(--h2-size); /* Baseline  */
+  max-width: var(--h2-max-width); /* Baseline  */
 }
 
 h3 {
-  line-height: var(--h3-line-height);
-  font-size: var(--h3-size);
-  max-width: var(--h3-max-width);
+  line-height: var(--h3-line-height); /* Baseline  */
+  font-size: var(--h3-size); /* Baseline  */
+  max-width: var(--h3-max-width); /* Baseline  */
 }
 
 p {
-  line-height: var(--p-s-line-height);
-  font-size: var(--p-s-size);
-  max-width: var(--p-s-max-width);
+  line-height: var(--p-s-line-height); /* Baseline  */
+  font-size: var(--p-s-size); /* Baseline  */
+  max-width: var(--p-s-max-width); /* Baseline  */
 }
 h1,
 h2,
 h3 {
-  font-family: var(--font-heading);
-  text-wrap: balance;
+  font-family: var(--font-heading); /* Baseline  */
+  text-wrap: balance; /* newly-available  */
 }
 
 p,
 li,
 ul,
 a {
-  font-family: var(--font-body);
-  font-weight: var(--text-font-weight);
+  font-family: var(--font-body); /* Baseline  */
+  font-weight: var(--text-font-weight); /* Baseline  */
 }
 
 header a {
-  text-decoration: none;
-  color: var(--color-text);
-  padding: 20px;
+  text-decoration: none; /* Baseline  */
+  color: var(--color-text); /* Baseline  */
+  padding: 20px; /* Baseline  */
 
   &:hover {
-    background-color: lightgrey;
-    border-radius: 20px;
+    /* Baseline  */
+    background-color: lightgrey; /* Baseline  */
+    border-radius: 20px; /* Baseline  */
   }
 }
 
 .astyle {
-  text-decoration: none;
-  padding: var(--button-outline-padding);
-  color: var(--color-brand-active);
-  outline: 1.5px solid var(--color-brand-active);
-  border-radius: var(--button-outline-radius);
-  cursor: pointer;
+  text-decoration: none; /* Baseline  */
+  padding: var(--button-outline-padding); /* Baseline  */
+  color: var(--color-brand-active); /* Baseline  */
+  outline: 1.5px solid var(--color-brand-active); /* Baseline  */
+  border-radius: var(--button-outline-radius); /* Baseline  */
+  cursor: pointer; /* limited available  */
 }
 
 /* einde stylesheet */
