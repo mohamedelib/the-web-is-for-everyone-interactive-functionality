@@ -220,7 +220,7 @@ header a {
 
 .ad-dag {
   background-color: var(--color-brand-active);
-  color: var(--color-text);
+  color: var(--color-text2);
 }
 
 .banner {
@@ -414,6 +414,7 @@ header a {
 
 .profile h2 {
   grid-row: 3 / 4;
+  color: var(--color-text2);
   @media (min-width: 780px) {
     grid-column: 2;
   }
@@ -662,7 +663,7 @@ a.ad-dag.astyle {
 }
 
 .uitreiking {
-  color: white;
+  color: var(--color-text2);
   background-color: var(--color-brand-active);
   outline: none;
   margin-bottom: 30px;
