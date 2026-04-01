@@ -232,3 +232,24 @@ Na het plaatsen van een reactie verschijnt er een succesbericht. De reactie is d
 Voor dit project heb ik een [WCAG audit](https://github.com/mohamedelib/the-web-is-for-everyone-interactive-functionality/issues/12) uitgevoerd om de toegankelijkheid te controleren. Ik heb gekeken naar contrast, toetsenbordbediening, structuur. De uitkomst en verbeterpunten heb ik vastgelegd.
 
 De volledige WCAG audit is [hier](https://github.com/mohamedelib/the-web-is-for-everyone-interactive-functionality/issues/12) te vinden
+
+## Bronnen
+
+HTML:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+CSS:
+https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
+https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+JavaScript/Server:
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+
