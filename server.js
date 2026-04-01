@@ -420,7 +420,7 @@ app.post(
     );
 
     response.redirect(
-      `/Talentaward/student/${encodeURIComponent(studentTitle)}?success=true`,
+      `/Talentaward/student/${encodeURIComponent(studentTitle)}?success=true#berichtenn`,
     );
   },
 );

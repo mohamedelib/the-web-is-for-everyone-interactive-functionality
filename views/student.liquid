@@ -108,7 +108,7 @@
     {% comment %} berichten achterlaten {% endcomment %}
      </section>
 <section class="nominatiebericht">
-<h2>Berichten</h2>
+<h2 id="berichtenn">Berichten</h2>
 <div class="comments-list">
     {% for comment in comments %}
       <div class="commentcard">
@@ -155,7 +155,7 @@
     {% elsif form.afzender != blank %}
       {% render 'partials/succes.liquid', message: "name ingevuld" %}
     {% endif %}
-  <button type="submit">Laat je reactie achter</button>
+  <button  type="submit">Laat je reactie achter</button>
 </form>
 
 </main>
