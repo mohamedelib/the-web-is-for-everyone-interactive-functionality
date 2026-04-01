@@ -64,6 +64,12 @@ Wanneer je een veld niet heb ingevuld, komt er een rode styling te voorschijn me
 Wanneer je comment gelukt is krijg je gelijk feedback. 
 <img width="674" height="513" alt="image" src="https://github.com/user-attachments/assets/6734f2d2-82f9-4827-b120-39ae791c927a" />
 
+## Progressive enhancement
+De website is gebouwd in drie lagen.
+-HTML zorgt dat de content en het formulier altijd werken, ook zonder CSS of JavaScript.
+-CSS voegt de layout, kleuren en feedback toe. Dark mode werkt via @media (prefers-color-scheme: dark). De site ziet er standaard uit in light mode. Heeft de gebruiker dark mode aan op zijn telefoon of laptop, dan passen de kleuren zich automatisch aan. 
+Als een veld niet is ingevuld krijgt het de class field-error. Dit regelt de server.
+
 ## Kenmerken
 
 HTML zorgt voor de structuur van de pagina.
