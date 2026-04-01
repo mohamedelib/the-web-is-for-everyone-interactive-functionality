@@ -685,7 +685,7 @@ a.ad-dag.astyle {
   display: flex;
   flex-direction: column;
   background-color: var(--color-brand-active);
-  color: var(--color-text2);
+  color: var(--color-text);
   margin: 0 auto;
   justify-content: center;
   align-items: center;
@@ -693,6 +693,10 @@ a.ad-dag.astyle {
   padding: 30px;
 }
 
+.ADdagrec h2,
+.ADdagrec p {
+  color: var(--color-text2);
+}
 .nomidata select {
   border: 1px solid var(--color-border);
   background: transparent;
