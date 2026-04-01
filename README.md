@@ -235,21 +235,25 @@ De volledige WCAG audit is [hier](https://github.com/mohamedelib/the-web-is-for-
 
 ## Bronnen
 
+## Bronnen
+
 HTML:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+- [form](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+- [fieldset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
+- [label](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
+- [textarea](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)
+- [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+
 CSS:
-https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
-https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
-https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+- [Custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- [clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
+- [CSS grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
+- [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)
+- [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+
 JavaScript/Server:
-https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+- [encodeURIComponent()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)Opus 4.6
 
