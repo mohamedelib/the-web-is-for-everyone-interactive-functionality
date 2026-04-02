@@ -66,13 +66,14 @@ Wanneer je comment gelukt is krijg je gelijk feedback.
 
 ## Progressive enhancement
 De website is gebouwd in drie lagen.
+
 -HTML zorgt dat de content en het formulier altijd werken, ook zonder CSS of JavaScript.
 
 -Baseline CSS voegt de layout, kleuren en feedback toe.
 
 -Enhance de functionaliteit geleidelijk voor een betere User Experience
 
-Ik heb daarvoor bijvoorbeeld een darkmode toegevoegd. Dark mode werkt via @media (prefers-color-scheme: dark). De site ziet er standaard uit in light mode. Heeft de gebruiker dark mode aan op zijn telefoon of laptop, dan passen de kleuren zich automatisch aan. 
+Ik heb daarvoor bijvoorbeeld UI states en een darkmode toegevoegd. Dark mode werkt via @media (prefers-color-scheme: dark). De site ziet er standaard uit in light mode. Heeft de gebruiker dark mode aan op zijn telefoon of laptop, dan passen de kleuren zich automatisch aan. 
 Als een veld niet is ingevuld krijgt het de class field-error. Dit regelt de server.
 
 ## Kenmerken
