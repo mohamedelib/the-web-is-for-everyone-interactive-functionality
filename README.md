@@ -75,6 +75,7 @@ De website is gebouwd in drie lagen.
 
 Ik heb daarvoor bijvoorbeeld UI states en een darkmode toegevoegd. Dark mode werkt via @media (prefers-color-scheme: dark). De site ziet er standaard uit in light mode. Heeft de gebruiker dark mode aan op zijn telefoon of laptop, dan passen de kleuren zich automatisch aan. 
 Als een veld niet is ingevuld krijgt het de class field-error. Dit regelt de server.
+Dark mode en foutmeldingen zijn extra lagen die de ervaring verbeteren maar niet nodig zijn om de site te gebruiken.
 
 ## Kenmerken
 
