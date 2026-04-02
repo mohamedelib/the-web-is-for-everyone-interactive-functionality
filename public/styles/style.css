@@ -809,6 +809,10 @@ button[type="submit"] {
 .comments-list {
   max-height: 300px;
   overflow-y: auto;
+  @supports (scrollbar-width: thin) {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-brand-active) transparent;
+  }
 }
 
 /* UI STATES */
