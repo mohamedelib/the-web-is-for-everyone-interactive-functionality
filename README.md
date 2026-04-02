@@ -1,5 +1,5 @@
 # AdConnect website
-[Live website](https://mohamedelib.github.io/the-startup-responsive-interactive-website/)
+[Live website](https://the-web-is-for-everyone-interactive-gy8v.onrender.com/)
 
 ## Korte uitleg van de opdracht en oplossing
 Voor dit project heb ik een deel van de AdConnect website opnieuw ontworpen en uitgebreid. De opdracht was om een duidelijkere en beter werkende website te maken. Ik heb een nieuwe home pagina gemaakt, de Talent Award pagina verbeterd en een studenten pagina ontwikkeld voor genomineerde studenten.
@@ -64,6 +64,19 @@ Wanneer je een veld niet heb ingevuld, komt er een rode styling te voorschijn me
 Wanneer je comment gelukt is krijg je gelijk feedback. 
 <img width="674" height="513" alt="image" src="https://github.com/user-attachments/assets/6734f2d2-82f9-4827-b120-39ae791c927a" />
 
+## Progressive enhancement
+De website is gebouwd in drie lagen.
+
+-HTML zorgt dat de content en het formulier altijd werken, ook zonder CSS of JavaScript.
+
+-Baseline CSS voegt de layout, kleuren en feedback toe.
+
+-Enhance de functionaliteit geleidelijk voor een betere User Experience
+
+Ik heb daarvoor bijvoorbeeld UI states en een darkmode toegevoegd. Dark mode werkt via @media (prefers-color-scheme: dark). De site ziet er standaard uit in light mode. Heeft de gebruiker dark mode aan op zijn telefoon of laptop, dan passen de kleuren zich automatisch aan. 
+Als een veld niet is ingevuld krijgt het de class field-error. Dit regelt de server.
+Dark mode en foutmeldingen zijn extra lagen die de ervaring verbeteren maar niet nodig zijn om de site te gebruiken.
+
 ## Kenmerken
 
 HTML zorgt voor de structuur van de pagina.
@@ -71,6 +84,7 @@ CSS regelt de layout met grid en media queries en de styleguide.
 JavaScript haalt data op uit een API en toont deze op de pagina.
 
 ### HTML
+```
 <section class="nominatiebericht">
 <h2 id="berichtenn">Berichten</h2>
 <div class="comments-list">
@@ -95,7 +109,7 @@ JavaScript haalt data op uit een API en toont deze op de pagina.
   </label>
   <button type="submit">Laat je reactie achter</button>
 </form>
-
+```
 De pagina gebruikt semantische HTML.
 Twee headers bevatten de navigatie en het logo.
 Main bevat het studentprofiel, de video, het verhaal en de reacties.
@@ -104,7 +118,92 @@ Het formulier verstuurt data via method= POST naar de database.
 Bij een leeg veld krijgt het element de class field-error zodat het opvalt.
 Een succesbericht wordt getoond via een andere partialview als de reactie geplaatst is.
 
+## CSS
+```
+:root {
+  --color-brand-active: hsl(213, 100%, 28%);
+  --color-brand-subtle: hsl(213, 100%, 88%);
+  --color-text: hsl(213, 21%, 9%);
+  --color-text2: white;
+  --color-bg-page: hsl(0, 0%, 98%);
+  --color-bg-surface: hsl(0, 0%, 100%);
 
+  --space-md: clamp(16px, 1.5vw, 20px);
+  --h1-size: clamp(1.875rem, 1.602rem + 1.1494vw, 2.5rem);
+  --font-body: "Archivo", sans-serif;
+  --font-heading: "ClashDisplay", sans-serif;
+}
+
+.nominatiebericht {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--color-bg-surface);
+  border: 2px solid var(--color-brand-active);
+  border-radius: 13px;
+  padding: 16px;
+}
+
+textarea.field-error,
+input[type="text"].field-error {
+  border: 2px solid red;
+  background: #fde8e8;
+}
+```
+
+De stylesheet gebruikt custom properties in :root voor kleuren, spacing en typografie.
+Dit maakt het makkelijk om waardes op een plek aan te passen.
+De layout werkt mobile-first. Media queries voegen pas grid en extra kolommen toe vanaf grotere schermen.
+Dark mode wordt geregeld met ```@media (prefers-color-scheme: dark)``` door custom properties te overschrijven in ```:root```.
+Formuliervelden met validatiefouten krijgen de class ```field-error```. Die class geeft een rode border en lichtroze achtergrond zodat de gebruiker direct ziet wat er mis is.
+Succes- en foutmeldingen hebben eigen classes met groene en rode kleuren voor duidelijke visuele feedback.
+
+## Server javacsript
+```
+app.post(
+  "/Talentaward/student/:title/comment",
+  async function (request, response) {
+    const studentTitle = decodeURIComponent(request.params.title);
+    const { message, afzender } = request.body;
+
+    const student = awardDataJSON.data.find((s) => s.title === studentTitle);
+
+    const errors = [];
+    if (!message) errors.push("message");
+    if (!afzender) errors.push("afzender");
+
+    if (errors.length > 0) {
+      return response.render("student.liquid", {
+        submitted: true,
+        errors: errors,
+        form: { message: message || "", afzender: afzender || "" },
+      });
+    }
+
+    await fetch(
+      "https://fdnd-agency.directus.app/items/adconnect_nominations_comments",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          comment: message,
+          name: afzender,
+          nomination: student.id,
+        }),
+      },
+    );
+
+    response.redirect(
+      `/Talentaward/student/${encodeURIComponent(studentTitle)}?success=true#berichtenn`,
+    );
+  },
+);
+```
+De server draait op Express met LiquidJS als template.
+Data wordt bij het opstarten opgehaald van de Directus API en opgeslagen in variabelen.
+Het POST endpoint(/Talentaward/student/:title/comment) valideert server-side of alle velden zijn ingevuld.
+Bij een succesvolle submit stuurt de server de data via fetch met POST naar de Directus API.
+Na het opslaan doet de server een redirect met een query parameter success=true en een fragment #berichtenn. Daardoor scrollt de browser na het herladen direct naar de berichten sectie.
 
 ## Videofragment interactie:
 
@@ -141,6 +240,33 @@ Feedback na actie
 
 Na het plaatsen van een reactie verschijnt er een succesbericht. De reactie is direct zichtbaar tussen de andere berichten. Dit bevestigt dat de actie is gelukt.
 
+## WCAG AUDIT
 
+Voor dit project heb ik een [WCAG audit](https://github.com/mohamedelib/the-web-is-for-everyone-interactive-functionality/issues/12) uitgevoerd om de toegankelijkheid te controleren. Ik heb gekeken naar contrast, toetsenbordbediening, structuur. De uitkomst en verbeterpunten heb ik vastgelegd.
 
+De volledige WCAG audit is [hier](https://github.com/mohamedelib/the-web-is-for-everyone-interactive-functionality/issues/12) te vinden
+
+## Bronnen
+
+## Bronnen
+
+HTML:
+- [form](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+- [fieldset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
+- [label](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
+- [textarea](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)
+- [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+
+CSS:
+- [Custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- [clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp)
+- [CSS grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
+- [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)
+- [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+
+JavaScript/Server:
+- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+- [encodeURIComponent()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
 
